@@ -353,6 +353,7 @@ header>span{
 	height:100%;
 	display: flex;
 	position:relative;
+	left:-80vw;
 	
 }
 .page5pp1>h2{
@@ -376,11 +377,21 @@ header>span{
 .page5pp1 p{
 	font-size:1.2rem;
 }
-.page5pp1 img{
-	margin-left:100px;
+#iframe{
+	position:relative;
+	margin-left:10%;
+}
+#iframe img{
+
 	padding-top:100px;
-	width:43%;
+	width:100%;
 	height:600px;
+}
+#iframe video{
+	position:absolute;
+	width:96%;
+	left:2.5%;
+	top:20%;
 }
 .workcontent{
 	height:700px;	
@@ -942,7 +953,7 @@ header>span{
 	.page5pp1 img{
 		position:absolute;
 	 width:80vw;
-	 height:400px;
+	 height:50vh;
 	 margin-left:0;
 		padding-top:30px;
 		padding-bottom:50px;
@@ -1160,7 +1171,7 @@ header>span{
 		display:none;
 	}
 	#footer p{
-		width:50%;
+		width:60%;
 		height:60%;
 		position:absolute;
 		left:0;
