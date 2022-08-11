@@ -21,7 +21,7 @@ $(document).ready(function(){
 	function next(){
 		$("#work_total").stop(). animate({left: pf * 2 },"slow",function(){
 			$("#work_total").append( $(".page5pp1").first());
-			$("#work_total").css("left" , pf+ "px" )	
+			$("#work_total").css("left" , pf + "px" )	
 		});		
 	}
 	function prev(){
@@ -47,6 +47,12 @@ $(".interesttitle a").click(function(){
 });
 
 
+	//ETC 사진 클릭 시 아이프레임 변경
+	$(".postersimg a").click(function(){
+		let etc = $(this).index();
+		$(".mockup1 iframe").eq(etc).show().siblings().hide();
+	});
+
 
 		//모바일 메뉴 네비게이션
 		if(  $(window).width()<1000 ) {
@@ -66,20 +72,64 @@ $(".interesttitle a").click(function(){
 			$("header nav").stop().slideUp();
 			$(".menu").text("menu");
 		});
+	
+	//모바일 etc팝업//
+	$(".postersimg a").click(function(){
+			let popup  = $(this).index();
+			$(".mockup1 iframe").eq(popup).fadeIn();
+	});
+	//팝업(큰이미지)--닫기	
+	$(".mockup1 iframe").mouseenter(function(){
+		$(".mockup1 iframe").fadeOut();
+	});
+	
 	}
+	
+	
+	//스크롤 휠 이벤트
+	window.addEventListener("wheel", function(e){
+			e.preventDefault();
+		},{passive : false});
+	
+		$(document).ready(function(){
 		
-		/*
+		var $html = $("html");
+	 
+		var page = 1;
+		 
+		var lastPage = $(".content").length;
+		 
+		$html.animate({scrollTop:0},10);
 		
-		
-	$(".menu").click(function(){
-		const menubar = $("header>nav").width();
-		//모바일 버튼 클릭
-		$("header nav").stop().animate({right: 0},1200);
+		$(window).on("wheel", function(e){
+	 
+		if($html.is(":animated")) return;
+	 
+				if(e.originalEvent.deltaY > 0){
+					if(page== lastPage) return;
+			 
+					page++;
+				}else if(e.originalEvent.deltaY < 0){
+					if(page == 1) return;
+			 
+					page--;
+				}
+				var posTop = (page-1) * $(window).height();
+			 
+				$html.animate({scrollTop : posTop});
+			 
+		});
 
 	});
-		//닫기버튼클릭
-	$(".menu").click(function(){
-		$("header nav").stop().animate({right: -650},1200);
-		});
-	}*/
+					//마지막 콘택트 페이지 애니메이션
+           $(window).scroll(function(){		
+							if(  $(window).scrollTop()>= 600){
+									$(".page2p1").addClass("slideInKeyframes");
+									$("#page2 img").addClass("slideInimgKeyframes");
+					}
+					if(  $(window).scrollTop()>= 6200){
+						$("#footer").addClass("footerKeyframes");
+					}
+					});
+	
 });///////end
