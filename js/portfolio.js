@@ -131,5 +131,5 @@ $(".interesttitle a").click(function(){
 						$("#footer").addClass("footerKeyframes");
 					}
 					});
-	
+					
 });///////end

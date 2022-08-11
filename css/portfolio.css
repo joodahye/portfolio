@@ -29,8 +29,6 @@ a {
 }
 section {
 	height: 100vh;
-	position:relative;
-	z-index:100;
 }
 
 /*****웹 우선*****/
@@ -181,7 +179,6 @@ header > span {
 }
 .page2p1 {	
 	position: absolute;	
-	left: 35%;
 	top: 14%;
 	font-size: 2rem;
 	width: 65%;
@@ -775,24 +772,27 @@ header > span {
 		display: none;
 	}
 	.page2p1 {
+		position: absolute;
 		font-size: 1.2rem;
-		left: 2.5vw;
 		top: 25vh;
 		width: 95vw;
 		line-height: 200%;
 		font-weight: 500;
+		opacity: 0;
 	}
 	.slideInKeyframes {
 	animation: slideIn 2s both;
 }
-@keyframes slideIn{
+@keyframes slideIn {
 	from{
-										left:50vw;		
+										left: 40vw;		
 					}
 					to{
-										left:2vw;			
+										opacity: 1;
+										left: 2vw;			
 					}
 }
+
 	.page2p2 {
 		position: absolute;
 		width: 95vw;
@@ -1291,6 +1291,7 @@ header > span {
 	/*마지막 contact*/
 	#footer {
 		position: relative;
+		opacity: 1;
 	}
 	#footer span {
 		display: none;
@@ -1308,12 +1309,11 @@ header > span {
 		word-wrap: break-word;
 		line-height: 120%;
 	}
-	#footer div {
+	#footer #portfolioPDF {
 		position: absolute;
-		flex-direction: column;
-		left: 2vw;
+		height: 20vh;
 	}
-	#footer div a {
+	#footer #portfolioPDF a {
 		margin: 0;
 		font-size: 1.2rem;
 		display: block;
